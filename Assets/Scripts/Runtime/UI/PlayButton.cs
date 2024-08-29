@@ -3,7 +3,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelsButton : MonoBehaviour
+public class PlayButton : MonoBehaviour
 {
     [SerializeField] Button button;
     
@@ -33,7 +33,7 @@ public class LevelsButton : MonoBehaviour
 
     void OnClick()
     {
-        UIEvents.OpenLevelsPanel?.Invoke();
+       SceneEvents.OnLoadGameScene?.Invoke();
     }
 
 #if UNITY_EDITOR
