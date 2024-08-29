@@ -36,7 +36,7 @@ public class LevelSelectionButton : MonoBehaviour
 
     void UpdateInfoText(LevelScoresData data)
     {
-        levelInfoText.text = $"Level {data.index} - {data.title} {Environment.NewLine} HighScore: {data.highScore}";
+        levelInfoText.text = $"{data.title} {Environment.NewLine} HighScore: {data.highScore}";
     }
 
     void OnClick()

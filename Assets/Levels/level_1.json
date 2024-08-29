@@ -1,0 +1,38 @@
+{
+  "title": "Level1",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Türkiye'nin başkenti neresidir?",
+      "options": [
+        "İstanbul",
+        "Ankara",
+        "İzmir",
+        "Bursa"
+      ],
+      "correctAnswer": "Ankara"
+    },
+    {
+      "id": 2,
+      "question": "Dünyanın en yüksek dağı hangisidir?",
+      "options": [
+        "Everest",
+        "K2",
+        "Kangchenjunga",
+        "Lhotse"
+      ],
+      "correctAnswer": "Everest"
+    },
+    {
+      "id": 3,
+      "question": "Hangi gezegen 'kırmızı gezegen' olarak bilinir?",
+      "options": [
+        "Mars",
+        "Venüs",
+        "Jüpiter",
+        "Satürn"
+      ],
+      "correctAnswer": "Mars"
+    }
+  ]
+}

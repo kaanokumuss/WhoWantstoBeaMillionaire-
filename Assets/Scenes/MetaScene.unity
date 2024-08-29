@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f904f8686cf243f43b2dbf4851614f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 8399001522515413244, guid: 76829b60048e89b4da15e9e9f8fc5a05, type: 3}
   spawnParent: {fileID: 1508846406}
 --- !u!1 &533829866
 GameObject:
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 687630583}
   - component: {fileID: 687630582}
   - component: {fileID: 687630581}
-  - component: {fileID: 687630580}
+  - component: {fileID: 687630584}
   m_Layer: 0
   m_Name: LevelsButton
   m_TagString: Untagged
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92d6a402646fa9e4ca37eda7b6981f5b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -702,19 +702,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687630576}
   m_CullTransparentMesh: 1
---- !u!114 &687630580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687630576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49139c04f5f7447bd8596f5a2ac737cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 687630581}
 --- !u!114 &687630581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +776,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.14329022, g: 0.4433962, b: 0.102483094, a: 1}
   m_EffectDistance: {x: 0, y: -20}
   m_UseGraphicAlpha: 1
+--- !u!114 &687630584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687630576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804cc9c1f0d7bd042bb912aa6ede614d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 687630581}
 --- !u!1 &784609571
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92d6a402646fa9e4ca37eda7b6981f5b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92d6a402646fa9e4ca37eda7b6981f5b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781994429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6347f3c464a11495da01e6c7be7babfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 445f353f74d6a754ca4a62aefd122e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelPanel: {fileID: 492687532}
