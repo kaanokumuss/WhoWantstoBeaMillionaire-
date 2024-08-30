@@ -72,7 +72,7 @@ public class QuestionManager : MonoBehaviour
 
     public void WrongAnswer()
     {
-        Debug.Log("Wrong Answer!");
+        
     }
 
     public void NextQuestion()

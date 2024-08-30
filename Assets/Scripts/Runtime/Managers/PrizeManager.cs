@@ -25,23 +25,27 @@ public class PrizeManager : MonoBehaviour
 
     public void ShowNextPrize()
     {
-        // Prize Panelini ve Background'u kontrol etme
-        panel.SetActive(true);
-        background.SetActive(false); // Background'u kapat
-        Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
-
-        if (questionManager.currentQuestionIndex < prizeUIs.Length)
+        if (questionManager.currentQuestionIndex < prizeUIs.Length-1)
         {
-            // UI elemanının rengini değiştir
+            panel.SetActive(true);
+            background.SetActive(false);
+
+            Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
+        
             prizeUIs[questionManager.currentQuestionIndex].color = prizeColor; 
-            WaitAndRevertBackgroundAsync(3).Forget();  // Arka planı geri yüklemek için UniTask başlat
+            WaitAndRevertBackgroundAsync(3).Forget();  
+
             Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
         }
         else
         {
-            Debug.Log("All prizes have been revealed.");
+            // Index dizi boyutunu aşarsa Winner olayını tetikle
+            Debug.Log("Winner event triggered");
+            GameEvents.Winner?.Invoke();
         }
     }
+
+
 
     private async UniTaskVoid WaitAndRevertBackgroundAsync(float seconds)
     {

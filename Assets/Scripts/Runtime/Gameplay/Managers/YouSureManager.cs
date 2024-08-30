@@ -46,8 +46,7 @@ public class YouSureManager : MonoBehaviour
         }
         else
         {
-            questionManager.WrongAnswer(); // Yanlış cevabı işleme al
-            Debug.Log("yanlis cevapo yuarra yediniz .");
+            GameEvents.Failed?.Invoke(correctAnswer); // Yanlış cevabı işleme al
         }
     }
 
