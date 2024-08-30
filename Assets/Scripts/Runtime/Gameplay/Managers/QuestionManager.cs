@@ -33,7 +33,7 @@ public class QuestionManager : MonoBehaviour
             {
                 int questionIndex = shuffledIndices[currentQuestionIndex];
                 QuestionDataSO.Question currentQuestion = questionData.questions[questionIndex];
-                
+        
                 questionText.text = currentQuestion.question;
 
                 for (int i = 0; i < optionsButtons.Length; i++)
@@ -41,14 +41,11 @@ public class QuestionManager : MonoBehaviour
                     optionsButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentQuestion.options[i];
                     optionsButtons[i].onClick.RemoveAllListeners();
 
-                    if (currentQuestion.options[i] == currentQuestion.correctAnswer)
+                    string selectedOption = currentQuestion.options[i];
+                    optionsButtons[i].onClick.AddListener(() =>
                     {
-                        optionsButtons[i].onClick.AddListener(() => CorrectAnswer());
-                    }
-                    else
-                    {
-                        optionsButtons[i].onClick.AddListener(() => WrongAnswer());
-                    }
+                        GameEvents.USurePanel?.Invoke(selectedOption, currentQuestion.correctAnswer); // Paneli tetikle
+                    });
                 }
             }
             else
@@ -62,19 +59,29 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    async Task CorrectAnswer()
+    void CheckAnswer(string selectedOption, string correctAnswer)
+    {
+        if (selectedOption == correctAnswer)
+        {
+            CorrectAnswer();
+        }
+        else
+        {
+            WrongAnswer();
+        }
+    }
+
+    public void CorrectAnswer()
     {
         GameEvents.OnCorrectAnswer?.Invoke();
         Debug.Log("Correct Answer!");
-        await WaitForSecondsAsync(3);
 
         NextQuestion();
         
     }
 
-    void WrongAnswer()
+    public void WrongAnswer()
     {
-        //GameOver
         Debug.Log("Wrong Answer!");
     }
 
@@ -89,9 +96,5 @@ public class QuestionManager : MonoBehaviour
         {
             Debug.Log("No more questions.");
         }
-    }
-    private async UniTask WaitForSecondsAsync(float seconds)
-    {
-        await UniTask.Delay((int)(seconds * 1000)); // UniTask.Delay milisaniye cinsinden çalışır
     }
 }
