@@ -5,10 +5,10 @@ using UnityEngine;
 public class YouSureManager : MonoBehaviour
 {
     [SerializeField] private GameObject uSure; // 'Are you sure?' paneli
+    [SerializeField] private GameObject background;
     [SerializeField] private Button yes; // 'Yes' butonu
     [SerializeField] private Button no; // 'No' butonu
     [SerializeField] private QuestionManager questionManager; // QuestionManager referansı
-
     private string selectedOption; // Seçilen opsiyon
     private string correctAnswer; // Doğru cevap
 
@@ -28,6 +28,7 @@ public class YouSureManager : MonoBehaviour
 
     private void ShowUSurePanel(string selected, string correct)
     {
+        background.SetActive(false);
         selectedOption = selected;
         correctAnswer = correct;
         uSure.SetActive(true); // 'Are you sure?' panelini aktif hale getir
@@ -40,15 +41,21 @@ public class YouSureManager : MonoBehaviour
         if (selectedOption == correctAnswer)
         {
             questionManager.CorrectAnswer(); // Doğru cevabı işleme al
+            background.SetActive(false);
+
         }
         else
         {
             questionManager.WrongAnswer(); // Yanlış cevabı işleme al
+            Debug.Log("yanlis cevapo yuarra yediniz .");
         }
     }
 
     private void OnNoClicked()
     {
         uSure.SetActive(false); // Paneli kapat, işlemi iptal et
+        background.SetActive(true);
+
     }
+    
 }

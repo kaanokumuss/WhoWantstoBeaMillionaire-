@@ -871,8 +871,8 @@ MonoBehaviour:
   - {fileID: 1846774079}
   prizeColor: {r: 1, g: 0, b: 0, a: 1}
   questionManager: {fileID: 2087511547}
-  Panel: {fileID: 1508607441}
-  Background: {fileID: 1933423000}
+  panel: {fileID: 1508607441}
+  background: {fileID: 1933423000}
 --- !u!1 &283786379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uSure: {fileID: 141982174}
+  background: {fileID: 1933423000}
   yes: {fileID: 1344502797}
   no: {fileID: 1390499773}
   questionManager: {fileID: 2087511547}

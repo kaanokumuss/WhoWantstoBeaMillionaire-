@@ -59,17 +59,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    void CheckAnswer(string selectedOption, string correctAnswer)
-    {
-        if (selectedOption == correctAnswer)
-        {
-            CorrectAnswer();
-        }
-        else
-        {
-            WrongAnswer();
-        }
-    }
+    
 
     public void CorrectAnswer()
     {
