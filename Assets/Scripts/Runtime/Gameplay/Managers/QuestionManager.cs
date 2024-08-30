@@ -9,7 +9,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] QuestionDataSO questionData; 
     [SerializeField] TextMeshProUGUI questionText; 
     [SerializeField] QuestionShaker questionShaker;
-    [FormerlySerializedAs("optionButtons")] [SerializeField] Button[] optionsButtons; 
+    [SerializeField] Button[] optionsButtons;
 
     private List<int> shuffledIndices;
     private int currentQuestionIndex = 0;
@@ -62,13 +62,20 @@ public class QuestionManager : MonoBehaviour
 
     void CorrectAnswer()
     {
+        // PrizeManager prizeManager = FindObjectOfType<PrizeManager>();
+        // prizeManager.ShowNextPrize();
+        
+        
+        //bag e koyup hangi indexli soru oldugunu gonderebiliriz.
+        SceneEvents.OnLoadPrizeScene?.Invoke();
+        GameEvents.OnCorrectAnswer?.Invoke();
         Debug.Log("Correct Answer!");
-        NextQuestion();
+        // NextQuestion();
     }
 
     void WrongAnswer()
     {
-        //GmeOver
+        //GameOver
         Debug.Log("Wrong Answer!");
     }
 

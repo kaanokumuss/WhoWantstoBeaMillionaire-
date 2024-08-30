@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metaSceneAsset: {fileID: 11400000, guid: 67fb2edbf3354d74fb4afbed9e35527b, type: 2}
   gameSceneAsset: {fileID: 11400000, guid: e710da032c479e347952db6abf9fedd1, type: 2}
+  prizeSceneAsset: {fileID: 11400000, guid: 2fbdce8ec5206594abd8b9eda659bbfd, type: 2}
 --- !u!1 &1546139678
 GameObject:
   m_ObjectHideFlags: 0
