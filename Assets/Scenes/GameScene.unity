@@ -835,6 +835,7 @@ MonoBehaviour:
   prizeColor: {r: 1, g: 0, b: 0, a: 1}
   questionManager: {fileID: 2087511547}
   Panel: {fileID: 1508607441}
+  Background: {fileID: 1933423000}
 --- !u!1 &283786379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,6 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 1068417552}
   timeDuration: 60
+  resetDelay: 3
 --- !u!1 &1261753607
 GameObject:
   m_ObjectHideFlags: 0

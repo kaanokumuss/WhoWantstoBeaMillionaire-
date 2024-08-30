@@ -10,7 +10,7 @@ public class PrizeManager : MonoBehaviour
     [SerializeField] Color prizeColor = Color.red; // Belirli bir rengi atanacak
     [SerializeField] QuestionManager questionManager;
     [SerializeField] private GameObject Panel;
-
+    [SerializeField] private GameObject Background;
     private  void OnEnable()
     {
         GameEvents.OnCorrectAnswer += ShowNextPrize;
@@ -26,6 +26,7 @@ public class PrizeManager : MonoBehaviour
     public void  ShowNextPrize()
     {
         Panel.SetActive(true);
+        Background.SetActive(false);
         Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
 
         if (questionManager.currentQuestionIndex < prizeUIs.Length)
@@ -47,5 +48,6 @@ public class PrizeManager : MonoBehaviour
         await UniTask.Delay((int)(seconds * 1000)); 
         // UniTask.Delay milisaniye cinsinden çalışır
             Panel.SetActive(false);
+            Background.SetActive(true);
     }
 }
