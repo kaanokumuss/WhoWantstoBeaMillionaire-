@@ -1,43 +1,51 @@
+using Cysharp.Threading.Tasks;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI; // Eğer UI bileşenlerini kullanıyorsan
+using UnityEngine.UI;
 
 public class PrizeManager : MonoBehaviour
 {
-    [SerializeField] Image[] prizeUIs; // UI elemanlarını tutan dizi (Image, TextMeshProUGUI vs.)
+    [SerializeField] Image[] prizeUIs; 
     [SerializeField] Color prizeColor = Color.red; // Belirli bir rengi atanacak
+    [SerializeField] QuestionManager questionManager;
+    [SerializeField] private GameObject Panel;
 
-    private int currentPrizeIndex = 1;
-
-    private void OnEnable()
+    private  void OnEnable()
     {
-        Debug.Log("Current Color: " + prizeUIs[currentPrizeIndex].color);
-
         GameEvents.OnCorrectAnswer += ShowNextPrize;
+
     }
 
     private void OnDisable()
     {
-        Debug.Log("Current Color: " + prizeUIs[currentPrizeIndex].color);
-
         GameEvents.OnCorrectAnswer -= ShowNextPrize;
     }
 
-    public void ShowNextPrize()
-    {
-        Debug.Log("Current Color: " + prizeUIs[currentPrizeIndex].color);
 
-        if (currentPrizeIndex < prizeUIs.Length)
+    public void  ShowNextPrize()
+    {
+        Panel.SetActive(true);
+        Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
+
+        if (questionManager.currentQuestionIndex < prizeUIs.Length)
         {
             // UI elemanının rengini değiştir
-            prizeUIs[currentPrizeIndex].color = prizeColor; // Doğru renk değişimi
-            currentPrizeIndex++;
-            Debug.Log("Current Color: " + prizeUIs[currentPrizeIndex].color);
+            prizeUIs[questionManager.currentQuestionIndex].color = prizeColor; // Doğru renk değişimi
+            WaitForSecondsAsync(3);
+            Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
 
         }
         else
         {
             Debug.Log("All prizes have been revealed.");
         }
+    }
+
+    private async UniTask WaitForSecondsAsync(float seconds)
+    {
+        await UniTask.Delay((int)(seconds * 1000)); 
+        // UniTask.Delay milisaniye cinsinden çalışır
+            Panel.SetActive(false);
     }
 }

@@ -4,5 +4,4 @@ public static class SceneEvents
 {
     public static Action OnLoadGameScene;
     public static Action OnLoadMetaScene;
-    public static Action OnLoadPrizeScene;
 }

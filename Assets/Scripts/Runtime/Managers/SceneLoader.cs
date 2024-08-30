@@ -10,8 +10,6 @@ public class SceneLoader : MonoBehaviour
     [Header("Scene Assets")]
     [SerializeField] LevelAssetSO metaSceneAsset;
     [SerializeField] LevelAssetSO gameSceneAsset;
-    [SerializeField] LevelAssetSO prizeSceneAsset;
-
     AsyncOperation _asyncOperation = new();
 
     private void Awake()
@@ -19,21 +17,16 @@ public class SceneLoader : MonoBehaviour
         HandleFirstLoad();
 
         SceneEvents.OnLoadGameScene += LoadGameScene;
-        SceneEvents.OnLoadMetaScene += LoadMetaScene;
-        SceneEvents.OnLoadPrizeScene += LoadPrizeScene;
+        SceneEvents.OnLoadMetaScene += LoadMetaScene; 
     }
 
     private void OnDestroy()
     {
         SceneEvents.OnLoadGameScene -= LoadGameScene;
         SceneEvents.OnLoadMetaScene -= LoadMetaScene;
-        SceneEvents.OnLoadPrizeScene -= LoadPrizeScene;
     }
 
-    private void LoadPrizeScene()
-    {
-        StartCoroutine(UnloadActiveSceneThenLoadScene(prizeSceneAsset.Asset));
-    }
+   
 
     void HandleFirstLoad()
     {

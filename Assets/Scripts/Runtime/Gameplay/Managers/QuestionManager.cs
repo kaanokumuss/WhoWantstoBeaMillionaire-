@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
@@ -12,7 +14,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] Button[] optionsButtons;
 
     private List<int> shuffledIndices;
-    private int currentQuestionIndex = 0;
+    public int currentQuestionIndex = 0;
 
     void Start()
     {
@@ -60,17 +62,14 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    void CorrectAnswer()
+    async Task CorrectAnswer()
     {
-        // PrizeManager prizeManager = FindObjectOfType<PrizeManager>();
-        // prizeManager.ShowNextPrize();
-        
-        
-        //bag e koyup hangi indexli soru oldugunu gonderebiliriz.
-        SceneEvents.OnLoadPrizeScene?.Invoke();
         GameEvents.OnCorrectAnswer?.Invoke();
         Debug.Log("Correct Answer!");
-        // NextQuestion();
+        await WaitForSecondsAsync(3);
+
+        NextQuestion();
+        
     }
 
     void WrongAnswer()
@@ -90,5 +89,9 @@ public class QuestionManager : MonoBehaviour
         {
             Debug.Log("No more questions.");
         }
+    }
+    private async UniTask WaitForSecondsAsync(float seconds)
+    {
+        await UniTask.Delay((int)(seconds * 1000)); // UniTask.Delay milisaniye cinsinden çalışır
     }
 }
