@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
-    [SerializeField] QuestionDataSO questionData; 
-    [SerializeField] TextMeshProUGUI questionText; 
+    [SerializeField] QuestionDataSO questionData;
+    [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionShaker questionShaker;
     [SerializeField] Button[] optionsButtons;
 
@@ -33,7 +33,7 @@ public class QuestionManager : MonoBehaviour
             {
                 int questionIndex = shuffledIndices[currentQuestionIndex];
                 QuestionDataSO.Question currentQuestion = questionData.questions[questionIndex];
-        
+                GameEvents.CorrectAnswer?.Invoke(currentQuestion.correctAnswer);
                 questionText.text = currentQuestion.question;
 
                 for (int i = 0; i < optionsButtons.Length; i++)
@@ -59,7 +59,6 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    
 
     public void CorrectAnswer()
     {
@@ -67,12 +66,10 @@ public class QuestionManager : MonoBehaviour
         Debug.Log("Correct Answer!");
 
         NextQuestion();
-        
     }
 
     public void WrongAnswer()
     {
-        
     }
 
     public void NextQuestion()

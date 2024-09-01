@@ -5,21 +5,27 @@ using UnityEngine.UI;
 public class TimeCounter : MonoBehaviour
 {
     public Slider timeSlider;
-    public float timeDuration = 60f; // Toplam süre
-    public float resetDelay = 3f; // Zaman sıfırlanmadan önce bekleme süresi
-
+    public float timeDuration = 60f;
+    public float resetDelay = 3f;
+    private string correctAnswer;
     private float timeLeft;
-    private bool isCounting = true; // Sayacın çalışıp çalışmadığını kontrol etmek için bir bayrak
+    private bool isCounting = true;
 
     void Start()
     {
-        // Doğru cevaba basıldığında ResetTime metodunu çağıracak
+        GameEvents.CorrectAnswer += CallFailedScene;
         GameEvents.OnCorrectAnswer += HandleCorrectAnswer;
-
-        // Başlangıç ayarları
         timeLeft = timeDuration;
         timeSlider.maxValue = timeDuration;
         timeSlider.value = timeDuration;
+
+        // Zaman sayacı başladığında ses çalsın
+        AudioEvents.PlaySound?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.OnCorrectAnswer -= HandleCorrectAnswer;
     }
 
     void Update()
@@ -29,41 +35,44 @@ public class TimeCounter : MonoBehaviour
             timeLeft -= Time.deltaTime;
             timeSlider.value = timeLeft;
         }
-        else if (timeLeft <= 0)
+        else if (timeLeft <= 0 && isCounting)
         {
-            // Zaman bittiğinde yapılacak işlemler
             timeLeft = 0;
-            isCounting = false; // Sayacı durdur
-            // İsterseniz zaman bitince yapılacak işlemleri burada tanımlayabilirsiniz
+            isCounting = false;
+            
+            // Zaman dolduğunda fail panelini aç
+            CallFailedScene(correctAnswer);
+            GameEvents.Failed?.Invoke(correctAnswer);
+                
         }
     }
 
-    // Doğru cevap geldiğinde çağrılan metod
-    private async void HandleCorrectAnswer()
+    private void CallFailedScene(string _correctAnswer)
     {
-        isCounting = false; // Sayacı durdur
-        await WaitForSecondsAsync(resetDelay); // Belirli bir süre bekle
-        ResetTime(); // Zamanı sıfırla
-        isCounting = true; // Sayacı yeniden başlat
+        correctAnswer = _correctAnswer;
     }
 
-    // Zamanı sıfırlayan metod
+
+    private async void HandleCorrectAnswer()
+    {
+        AudioEvents.StopSound?.Invoke();
+        isCounting = false;
+        await WaitForSecondsAsync(resetDelay);
+        ResetTime();
+        isCounting = true;
+
+        // Zaman resetlendiğinde ses yeniden başlasın
+        AudioEvents.PlaySound?.Invoke();
+    }
+
     private void ResetTime()
     {
         timeLeft = timeDuration;
         timeSlider.value = timeDuration;
     }
 
-    // Olaydan abone olmayı kesmek için OnDestroy metodunu ekleyebilirsiniz
-    private void OnDestroy()
-    {
-        GameEvents.OnCorrectAnswer -= HandleCorrectAnswer;
-    }
-
-    // Asenkron bekleme metodunu tanımlıyoruz
     private async UniTask WaitForSecondsAsync(float seconds)
     {
-        await UniTask.Delay((int)(seconds * 1000)); 
-        // UniTask.Delay milisaniye cinsinden çalışır
+        await UniTask.Delay((int)(seconds * 1000));
     }
 }

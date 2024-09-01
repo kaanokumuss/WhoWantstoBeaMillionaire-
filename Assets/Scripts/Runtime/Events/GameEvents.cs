@@ -10,4 +10,7 @@ public static class GameEvents
     public static Action<string, string> USurePanel;
     public static Action<string> Failed;
     public static Action Winner;
+    public static Action<string> CorrectAnswer;
+
 }
+    

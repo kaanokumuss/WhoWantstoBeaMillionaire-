@@ -14,9 +14,9 @@ public class YouSureManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.USurePanel += ShowUSurePanel; // Paneli gösteren event
-        yes.onClick.AddListener(OnYesClicked); // 'Yes' butonuna tıklandığında çağrılan event
-        no.onClick.AddListener(OnNoClicked); // 'No' butonuna tıklandığında çağrılan event
+        GameEvents.USurePanel += ShowUSurePanel; 
+        yes.onClick.AddListener(OnYesClicked);
+        no.onClick.AddListener(OnNoClicked); 
     }
 
     private void OnDisable()
