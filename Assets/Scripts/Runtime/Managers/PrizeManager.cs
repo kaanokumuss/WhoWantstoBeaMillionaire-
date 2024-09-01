@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PrizeManager : MonoBehaviour
 {
-    [SerializeField] Image[] prizeUIs; 
-    [SerializeField] Color prizeColor = Color.red; // Belirli bir rengi atanacak
+    [SerializeField] Image[] prizeUIs;
+    [SerializeField] private Sprite RedprizeUI;
     [SerializeField] QuestionManager questionManager;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject background;
@@ -32,7 +32,7 @@ public class PrizeManager : MonoBehaviour
 
             Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
         
-            prizeUIs[questionManager.currentQuestionIndex].color = prizeColor; 
+            prizeUIs[questionManager.currentQuestionIndex].sprite = RedprizeUI; 
             WaitAndRevertBackgroundAsync(3).Forget();  
 
             Debug.Log("Current Color: " + prizeUIs[questionManager.currentQuestionIndex].color);
