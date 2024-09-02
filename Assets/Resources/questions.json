@@ -1,0 +1,304 @@
+{
+    "questions": [
+        {
+            "question": "Türkiye'nin başkenti neresidir?",
+            "options": [
+                "İstanbul",
+                "Ankara",
+                "İzmir",
+                "Bursa"
+            ],
+            "correctAnswer": "Ankara"
+        },
+        {
+            "question": "Dünyanın en yüksek dağı hangisidir?",
+            "options": [
+                "Everest",
+                "K2",
+                "Kangchenjunga",
+                "Lhotse"
+            ],
+            "correctAnswer": "Everest"
+        },
+        {
+            "question": "Hangi gezegen 'kırmızı gezegen' olarak bilinir?",
+            "options": [
+                "Mars",
+                "Venüs",
+                "Jüpiter",
+                "Satürn"
+            ],
+            "correctAnswer": "Mars"
+        },
+        {
+            "question": "Hangi ülke Avrupa Birliği'ne üye değildir?",
+            "options": [
+                "İsviçre",
+                "Almanya",
+                "Fransa",
+                "İtalya"
+            ],
+            "correctAnswer": "İsviçre"
+        },
+        {
+            "question": "Hangisi bir element değildir?",
+            "options": [
+                "Oksijen",
+                "Su",
+                "Altın",
+                "Demir"
+            ],
+            "correctAnswer": "Su"
+        },
+        {
+            "question": "İnsan vücudundaki en büyük organ hangisidir?",
+            "options": [
+                "Karaciğer",
+                "Deri",
+                "Beyin",
+                "Akciğer"
+            ],
+            "correctAnswer": "Deri"
+        },
+        {
+            "question": "Einstein hangi teori ile tanınır?",
+            "options": [
+                "Görelilik Teorisi",
+                "Büyük Patlama Teorisi",
+                "Kuantum Teorisi",
+                "Çekim Teorisi"
+            ],
+            "correctAnswer": "Görelilik Teorisi"
+        },
+        {
+            "question": "Fransız Devrimi hangi yılda başladı?",
+            "options": [
+                "1789",
+                "1776",
+                "1804",
+                "1812"
+            ],
+            "correctAnswer": "1789"
+        },
+        {
+            "question": "Hangisi Dünya'nın en büyük okyanusudur?",
+            "options": [
+                "Atlantik",
+                "Pasifik",
+                "Hint",
+                "Arktik"
+            ],
+            "correctAnswer": "Pasifik"
+        },
+        {
+            "question": "Hangi spor dalında top kullanılmaz?",
+            "options": [
+                "Tenis",
+                "Yüzme",
+                "Futbol",
+                "Basketbol"
+            ],
+            "correctAnswer": "Yüzme"
+        },
+        {
+            "question": "Hangisi bir çöl değildir?",
+            "options": [
+                "Sahara",
+                "Antarktika",
+                "Gobi",
+                "Amazon"
+            ],
+            "correctAnswer": "Amazon"
+        },
+        {
+            "question": "DNA'nın yapısındaki ana şeker nedir?",
+            "options": [
+                "Glukoz",
+                "Fruktoz",
+                "Deoksiriboz",
+                "Maltoz"
+            ],
+            "correctAnswer": "Deoksiriboz"
+        },
+        {
+            "question": "Hangisi bir asit değildir?",
+            "options": [
+                "HCl",
+                "NaOH",
+                "H2SO4",
+                "HNO3"
+            ],
+            "correctAnswer": "NaOH"
+        },
+        {
+            "question": "Hangi ülke en çok nüfusa sahiptir?",
+            "options": [
+                "Hindistan",
+                "Çin",
+                "ABD",
+                "Rusya"
+            ],
+            "correctAnswer": "Çin"
+        },
+        {
+            "question": "Hangisi bir Nobel Ödülü kategorisi değildir?",
+            "options": [
+                "Fizik",
+                "Kimya",
+                "Matematik",
+                "Tıp"
+            ],
+            "correctAnswer": "Matematik"
+        },
+        {
+            "question": "Dünyanın en büyük adası hangisidir?",
+            "options": [
+                "Grönland",
+                "Yeni Gine",
+                "Borneo",
+                "Madagaskar"
+            ],
+            "correctAnswer": "Grönland"
+        },
+        {
+            "question": "Hangisi bir asal sayı değildir?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "4"
+        },
+        {
+            "question": "Hangisi dünyanın en uzun nehri olarak kabul edilir?",
+            "options": [
+                "Amazon",
+                "Nil",
+                "Yangtze",
+                "Mississippi"
+            ],
+            "correctAnswer": "Nil"
+        },
+        {
+            "question": "Hangisi Güneş Sistemi'ndeki en büyük gezegendir?",
+            "options": [
+                "Satürn",
+                "Jüpiter",
+                "Uranüs",
+                "Neptün"
+            ],
+            "correctAnswer": "Jüpiter"
+        },
+        {
+            "question": "Yeryüzünün yüzde kaçı sudur?",
+            "options": [
+                "60%",
+                "70%",
+                "80%",
+                "90%"
+            ],
+            "correctAnswer": "70%"
+        },
+        {
+            "question": "Hangisi bir yazılım dili değildir?",
+            "options": [
+                "Python",
+                "Java",
+                "HTML",
+                "SQL"
+            ],
+            "correctAnswer": "HTML"
+        },
+        {
+            "question": "Hangisi bir protein örneği değildir?",
+            "options": [
+                "Hemoglobin",
+                "Amilaz",
+                "Insülin",
+                "Glukoz"
+            ],
+            "correctAnswer": "Glukoz"
+        },
+        {
+            "question": "Hangisi bir finansal terim değildir?",
+            "options": [
+                "Enflasyon",
+                "Deflasyon",
+                "Reflasyon",
+                "Konsantrasyon"
+            ],
+            "correctAnswer": "Konsantrasyon"
+        },
+        {
+            "question": "Hangisi bir mantar çeşididir?",
+            "options": [
+                "Porcini",
+                "Brokoli",
+                "Karnabahar",
+                "Marul"
+            ],
+            "correctAnswer": "Porcini"
+        },
+        {
+            "question": "Hangisi bir gezegen değildir?",
+            "options": [
+                "Plüton",
+                "Venüs",
+                "Ay",
+                "Merkür"
+            ],
+            "correctAnswer": "Ay"
+        },
+        {
+            "question": "Hangisi bir sanat akımı değildir?",
+            "options": [
+                "Empresyonizm",
+                "Modernizm",
+                "Klasisizm",
+                "Rasyonizm"
+            ],
+            "correctAnswer": "Rasyonizm"
+        },
+        {
+            "question": "Hangisi bir elektrik birimi değildir?",
+            "options": [
+                "Amper",
+                "Volt",
+                "Watt",
+                "Pascal"
+            ],
+            "correctAnswer": "Pascal"
+        },
+        {
+            "question": "Hangisi bir bulut türü değildir?",
+            "options": [
+                "Kumulüs",
+                "Sirüs",
+                "Stratus",
+                "Tornado"
+            ],
+            "correctAnswer": "Tornado"
+        },
+        {
+            "question": "Hangisi bir kimyasal bağ türüdür?",
+            "options": [
+                "Kovalent",
+                "İyonik",
+                "Metal",
+                "Hidrojen"
+            ],
+            "correctAnswer": "Metal"
+        },
+        {
+            "question": "Hangisi bir Avrupa başkenti değildir?",
+            "options": [
+                "Viyana",
+                "Madrid",
+                "Lizbon",
+                "Sydney"
+            ],
+            "correctAnswer": "Sydney"
+        }
+    ]
+}
