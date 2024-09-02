@@ -299,6 +299,26 @@
                 "Sydney"
             ],
             "correctAnswer": "Sydney"
+        },
+        {
+            "question": "Hangi ülke kıta Avustralya'da yer alır?",
+            "options": [
+                "Endonezya",
+                "Papua Yeni Gine",
+                "Yeni Zelanda",
+                "Fiji"
+            ],
+            "correctAnswer": "Yeni Zelanda"
+        },
+        {
+            "question": "4+4",
+            "options": [
+                "8",
+                "5",
+                "3",
+                "10"
+            ],
+            "correctAnswer": "8"
         }
     ]
 }

@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MetaScene.unity
     guid: c09de463e8de8b04abbf06161bda3f1a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrizeScene.unity
     guid: 8b1c137dde494104883b7b486cee0d97
   m_configObjects: {}

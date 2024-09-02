@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,12 +15,16 @@ public class TwoXManager : MonoBehaviour
     void Start()
     {
         twoXButton.onClick.AddListener(UsageTwoX);
-        GameEvents.TwoXJokerUsed?.Invoke();
+        
     }
     private void UsageTwoX()
     {
         twoXButton.interactable = false; // Sadece 2x butonunu devre dışı bırak
+        GameEvents.TwoXJokerUsed?.Invoke();
     }
+    
+
+
 
 
    

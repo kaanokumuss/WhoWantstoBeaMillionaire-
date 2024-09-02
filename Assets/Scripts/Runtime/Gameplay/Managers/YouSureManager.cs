@@ -13,7 +13,7 @@ public class YouSureManager : MonoBehaviour
     [SerializeField] private QuestionManager questionManager; // QuestionManager referansı
     private string selectedOption; // Seçilen opsiyon
     private string correctAnswer; // Doğru cevap]
-    private bool usingJoker;
+    private bool usingJoker = false;
     private int jokerUsed =0;
     private void OnEnable()
     {
