@@ -376,7 +376,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.000061035156, w: 0}
+  m_margin: {x: 48.725006, y: 0, z: 0.000061035156, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   - {fileID: 1881462007}
   - {fileID: 2083406434}
   - {fileID: 1846774079}
-  RedprizeUI: {fileID: 21300000, guid: 8e57b473a33554944a20dd6f96e17de9, type: 3}
+  RedprizeUI: {fileID: 21300000, guid: d8107ea7b3571f347849dffba4f6a423, type: 3}
   questionManager: {fileID: 2087511547}
   panel: {fileID: 1508607441}
   background: {fileID: 1933423000}
@@ -2766,8 +2766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7827148, y: 0}
-  m_SizeDelta: {x: -141.4214, y: 0}
+  m_AnchoredPosition: {x: -7.725006, y: 0}
+  m_SizeDelta: {x: -122.407, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609618544
 MonoBehaviour:
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.1884155, y: 0, z: 2.3769531, w: 0}
+  m_margin: {x: -2.376709, y: 0, z: 2.3769531, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

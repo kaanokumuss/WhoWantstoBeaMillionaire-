@@ -201,7 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metaSceneAsset: {fileID: 11400000, guid: 67fb2edbf3354d74fb4afbed9e35527b, type: 2}
   gameSceneAsset: {fileID: 11400000, guid: e710da032c479e347952db6abf9fedd1, type: 2}
-  prizeSceneAsset: {fileID: 11400000, guid: 2fbdce8ec5206594abd8b9eda659bbfd, type: 2}
 --- !u!1 &1546139678
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionData: {fileID: 11400000, guid: 23ad61f4b52ade64789454ac72dc7c29, type: 2}
-  jsonTextAsset: {fileID: 4900000, guid: 53ea8853c7726424f9347128533d4b4b, type: 3}
+  jsonTextAsset: {fileID: 4900000, guid: 786a8060ae61209428ca3fc046593b6e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
