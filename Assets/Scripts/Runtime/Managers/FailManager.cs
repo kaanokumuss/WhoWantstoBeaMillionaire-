@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class FailManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class FailManager : MonoBehaviour
 
     private void ShowFailPanel(string correctanswer)
     {
+        AudioEvents.StopSound?.Invoke();
         correctAnswer.text ="Doğru Cevap : " + correctanswer;
         background.SetActive(false);
         failPanel.SetActive(true); 
