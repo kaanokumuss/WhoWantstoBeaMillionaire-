@@ -11,9 +11,9 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] QuestionDataSO questionData;
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionShaker questionShaker;
-    [SerializeField] Button[] optionsButtons;
+    public Button[] optionsButtons;
     [SerializeField] private FiftyFiftyManager _fiftyManager;
-
+    [SerializeField] private Button twoXButton;
     private List<int> shuffledIndices;
     public int currentQuestionIndex = 0;
 
@@ -41,11 +41,12 @@ public class QuestionManager : MonoBehaviour
                 {
                     optionsButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentQuestion.options[i];
                     optionsButtons[i].onClick.RemoveAllListeners();
-
+                    
                     string selectedOption = currentQuestion.options[i];
                     optionsButtons[i].onClick.AddListener(() =>
                     {
-                        GameEvents.USurePanel?.Invoke(selectedOption, currentQuestion.correctAnswer); // Paneli tetikle
+                        GameEvents.USurePanel?.Invoke(selectedOption, currentQuestion.correctAnswer); 
+                        
                     });
                 }
             }
@@ -68,10 +69,7 @@ public class QuestionManager : MonoBehaviour
 
         NextQuestion();
     }
-
-    public void WrongAnswer()
-    {
-    }
+    
 
     public void NextQuestion()
     {

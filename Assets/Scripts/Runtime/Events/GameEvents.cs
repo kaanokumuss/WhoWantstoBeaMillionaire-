@@ -8,6 +8,9 @@ public static class GameEvents
     public static Action<string> Failed;
     public static Action Winner;
     public static Action<string> CorrectAnswer;
+    public static Action TwoXJokerUsed;
+    public static Action<string> TwoXJokerFalseAnswerRemove;
+
 
 }
     

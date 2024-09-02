@@ -49,14 +49,13 @@ public class FiftyFiftyManager : MonoBehaviour
         }
     }
 
-    // Bu metot yeni bir soru geldiğinde jokeri sıfırlamak için kullanılabilir
+    // Bu metot yeni bir soru geldiğinde butonları sıfırlamak için kullanılabilir
     public void ResetJoker()
     {
-        jokerUsed = false;
-        fiftyFiftyButton.interactable = false; // Joker butonunu yeniden etkinleştir
+        // Joker kullanıldıktan sonra bir daha aktif olmasını istemediğimiz için, fiftyFiftyButton.interactable = false bırakıyoruz.
         foreach (Button button in optionButtons)
         {
-            button.gameObject.SetActive(true); // Butonları tekrar aktif hale getir
+            button.gameObject.SetActive(true); // Yanıt butonlarını tekrar aktif hale getir
         }
     }
 }
