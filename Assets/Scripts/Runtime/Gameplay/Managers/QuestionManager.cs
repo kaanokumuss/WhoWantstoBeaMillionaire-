@@ -12,6 +12,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionShaker questionShaker;
     [SerializeField] Button[] optionsButtons;
+    [SerializeField] private FiftyFiftyManager _fiftyManager;
 
     private List<int> shuffledIndices;
     public int currentQuestionIndex = 0;
@@ -77,6 +78,7 @@ public class QuestionManager : MonoBehaviour
         if (currentQuestionIndex < shuffledIndices.Count - 1)
         {
             currentQuestionIndex++;
+            _fiftyManager.ResetJoker();
             DisplayQuestion();
         }
         else
