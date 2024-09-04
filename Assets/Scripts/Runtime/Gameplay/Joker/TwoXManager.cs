@@ -19,8 +19,13 @@ public class TwoXManager : MonoBehaviour
     }
     private void UsageTwoX()
     {
-        twoXButton.interactable = false; // Sadece 2x butonunu devre dışı bırak
-        GameEvents.TwoXJokerUsed?.Invoke();
+        if (!jokerUsed) 
+        {
+            FindObjectOfType<PauseManager>().SetTwoXUsed();
+            jokerUsed = true;
+            twoXButton.interactable = false; 
+            GameEvents.TwoXJokerUsed?.Invoke();
+        }
     }
     
 

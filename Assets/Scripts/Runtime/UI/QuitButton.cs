@@ -1,24 +1,24 @@
 using DG.Tweening;
-using NaughtyAttributes;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayButton : MonoBehaviour
+public class QuitButton : MonoBehaviour
 {
-    [SerializeField] Button button;
-    
+    public Button quitButton;
+
     void OnEnable()
     {
         ClickMeAnimation();
-        button.onClick.AddListener(OnClick);
+        quitButton.onClick.AddListener(OnClick);
     }
 
     void OnDisable()
     {
-        button.onClick.RemoveListener(OnClick);
+        quitButton.onClick.RemoveListener(OnClick);
         DOTween.Kill(transform);
     }
-
     void ClickMeAnimation()
     {
         DOTween.Sequence()
@@ -34,15 +34,6 @@ public class PlayButton : MonoBehaviour
 
     void OnClick()
     {
-       SceneEvents.OnLoadGameScene?.Invoke();
+        Application.Quit();
     }
-
-#if UNITY_EDITOR
-    [Button]
-    void FindButton()
-    {
-        button = GetComponent<Button>();
-    }
-#endif
-
 }

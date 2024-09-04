@@ -11,6 +11,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] QuestionDataSO questionData;
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionShaker questionShaker;
+    [SerializeField] private AudioSource correctAnswerSound;
     public Button[] optionsButtons;
     [SerializeField] private FiftyFiftyManager _fiftyManager;
     [SerializeField] private Button twoXButton;
@@ -67,6 +68,10 @@ public class QuestionManager : MonoBehaviour
         GameEvents.OnCorrectAnswer?.Invoke();
         Debug.Log("Correct Answer!");
 
+        if (correctAnswerSound != null)
+        {
+            correctAnswerSound.Play();
+        }
         NextQuestion();
     }
     

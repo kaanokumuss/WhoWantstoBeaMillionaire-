@@ -26,8 +26,8 @@ public class FiftyFiftyManager : MonoBehaviour
     {
         if (!jokerUsed)
         {
-            jokerUsed = true; // Joker kullanıldı
-
+            jokerUsed = true; 
+            FindObjectOfType<PauseManager>().SetFiftyFiftyUsed();
             int removedCount = 0;
             foreach (Button button in optionButtons)
             {
@@ -41,21 +41,17 @@ public class FiftyFiftyManager : MonoBehaviour
                 }
             }
 
-            fiftyFiftyButton.interactable = false; // Joker butonunu devre dışı bırak
-        }
-        else
-        {
-            Debug.LogWarning("Joker zaten kullanıldı.");
+            fiftyFiftyButton.interactable = false;
         }
     }
 
-    // Bu metot yeni bir soru geldiğinde butonları sıfırlamak için kullanılabilir
+
     public void ResetJoker()
     {
-        // Joker kullanıldıktan sonra bir daha aktif olmasını istemediğimiz için, fiftyFiftyButton.interactable = false bırakıyoruz.
+        
         foreach (Button button in optionButtons)
         {
-            button.gameObject.SetActive(true); // Yanıt butonlarını tekrar aktif hale getir
+            button.gameObject.SetActive(true); 
         }
     }
 }

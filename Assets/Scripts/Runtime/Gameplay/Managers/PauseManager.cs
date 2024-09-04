@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
     public Button pauseButton;       
-    public Button resumeButton;      
+    public Button resumeButton;
+    public Button fiftyFiftyButton;  
+    public Button twoXButton;
     public GameObject pauseMenuUI;   // "OYUN DURDURULDU" yazýsýný içeren UI paneli
     public AudioSource[] allAudioSources;  // Tüm ses kaynaklarý
     public Button[] allOptionButtons;  // Oyun içindeki butonlar
     public TimeCounter timeCounter;    // Zamanlayýcý
     public QuestionManager questionManager;
 
+
+    private bool isFiftyFiftyUsed = false;
+    private bool isTwoXUsed = false;
     private bool isPaused = false;
 
     void Start()
@@ -23,30 +28,49 @@ public class PauseManager : MonoBehaviour
         pauseMenuUI.SetActive(false); // Oyunun baþlangýcýnda "OYUN DURDURULDU" yazýsýný gizli tut
         resumeButton.gameObject.SetActive(false); // Baþlangýçta Resume butonunu gizle
     }
+    public void SetFiftyFiftyUsed()
+    {
+        isFiftyFiftyUsed = false;
+    }
+    public void SetTwoXUsed()
+    {
+        isTwoXUsed = false;
+    }
 
     void PauseGame()
     {
-        isPaused = true;
-        Time.timeScale = 0f; // Oyunu durdurur
-        pauseMenuUI.SetActive(true); // "OYUN DURDURULDU" yazýsýný göster
-
-        // Pause butonunu gizle, Resume butonunu göster
-        pauseButton.gameObject.SetActive(false);
-        resumeButton.gameObject.SetActive(true);
-
-        // Tüm sesleri kapat
-        foreach (AudioSource audioSource in allAudioSources)
+        if (!isPaused)
         {
-            audioSource.Pause();
-        }
+            isPaused = true;
+            Time.timeScale = 0f;
+            pauseMenuUI.SetActive(true);
+            pauseButton.gameObject.SetActive(false);
+            resumeButton.gameObject.SetActive(true);
 
-        foreach (Button btn in questionManager.optionsButtons)
-        {
-            btn.interactable = false;
-        }
+            foreach (AudioSource audioSource in allAudioSources)
+            {
+                audioSource.Pause();
+            }
 
-        // TimeCounter'ý durdur
-        timeCounter.enabled = false;
+            foreach (Button btn in questionManager.optionsButtons)
+            {
+                btn.interactable = false;
+            }
+
+            // Joker butonlarýný duraklat
+            if (!isFiftyFiftyUsed)
+            {
+                fiftyFiftyButton.interactable = false;
+            }
+            if (!isTwoXUsed)
+            {
+                twoXButton.interactable = false;
+            }
+            
+            timeCounter.enabled = false;
+
+            
+        }
     }
 
     void ResumeGame()
@@ -70,7 +94,18 @@ public class PauseManager : MonoBehaviour
             btn.interactable = true;
         }
 
+        if (!isFiftyFiftyUsed)
+        {
+            fiftyFiftyButton.interactable = true;
+        }
+        if (!isTwoXUsed)
+        {
+            twoXButton.interactable = true;
+        }
+
         // TimeCounter'ý tekrar etkinleþtir
         timeCounter.enabled = true;
+
+        
     }
 }

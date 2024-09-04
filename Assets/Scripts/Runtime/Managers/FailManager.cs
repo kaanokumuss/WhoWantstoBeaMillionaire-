@@ -10,6 +10,8 @@ public class FailManager : MonoBehaviour
     [SerializeField] private Button quitGame; 
     [SerializeField] private Button newGame; 
     [SerializeField] private TextMeshProUGUI correctAnswer;
+    [SerializeField] private AudioSource failSound;
+    [SerializeField] private MusicManager musicManager;
     private void OnEnable()
     {
         GameEvents.Failed += ShowFailPanel; 
@@ -29,7 +31,10 @@ public class FailManager : MonoBehaviour
         AudioEvents.StopSound?.Invoke();
         correctAnswer.text ="Doğru Cevap : " + correctanswer;
         background.SetActive(false);
-        failPanel.SetActive(true); 
+        failPanel.SetActive(true);
+        failSound.Play();
+
+        musicManager.backgroundMusic.Stop();
     }
 
     private void OnNewGameClicked()
